@@ -1,0 +1,96 @@
+:root {
+  --bg-dark: #0f051d;
+  --bg-accent: rgba(138, 69, 255, 0.15);
+  --text-primary: #f8f4ff;
+  --text-secondary: rgba(248, 244, 255, 0.75);
+  --highlight: #ff71c6;
+  --glow: rgba(255, 113, 198, 0.5);
+  --card-glass: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255, 255, 0.14);
+  color-scheme: dark;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, rgba(138, 69, 255, 0.35), transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(255, 119, 189, 0.45), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(255, 195, 113, 0.35), transparent 45%),
+    var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/glow/petal-light.svg") repeat;
+  opacity: 0.25;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(9, 10, 36, 0.45);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffe57d 0%, #ff71c6 40%, #7d89ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #13041f;
+  background: linear-gradient(135deg, #ffe57d, #ff71c6 50%, #7d89ff);
+  box-shadow: 0 15px 35px rgba(255, 113, 198, 0.35);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 25px 45px rgba(125, 137, 255, 0.4);
+}
+
+section {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+}
